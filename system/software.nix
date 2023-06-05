@@ -8,5 +8,10 @@
    arduino
    git
    mlocate
+   steam
+   lutris
+   protonup-qt
+   heroic
+   steam-run
  ];
 } 
