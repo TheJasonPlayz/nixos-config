@@ -8,7 +8,8 @@
   imports =
     [
       <home-manager/nixos>
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix #default hardware config
+      ./hardware.nix #custom hardware config
       ./services.nix
       ./xserver.nix
       ./software.nix
@@ -43,21 +44,33 @@
     '';
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch";
+      xmocomp = "xmonad --recompile && xmonad --restart";
     };
+    ohMyZsh = {
+      enable = true;
+      theme = "eastwood";
+      plugins = [
+        "git"
+        "1password"
+      ];
+    };
+  };
+
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+    remotePlay.openFirewall = true;
+  };
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
   };
 
   users.users.jasonw = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "uucp" "mlocate" ];
+    extraGroups = [ "tty" "networkmanager" "wheel" "uucp" "dialout" "mlocate" ];
     shell = pkgs.zsh;
   };
-
-  environment.systemPackages = with pkgs; [ 
-    neofetch
-    fontpreview
-    lxappearance
-    usbutils
-  ];
 
   fonts.fonts = with pkgs; [
     nerdfonts

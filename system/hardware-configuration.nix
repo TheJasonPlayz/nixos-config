@@ -14,7 +14,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/49cdb77a-7910-46e7-aee9-2393e1a9711b";
+    { device = "/dev/disk/by-uuid/fae18a1a-2493-4de7-8a8c-6e6ef0b72bf1";
       fsType = "ext4";
     };
 
@@ -24,27 +24,27 @@
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/7bc062be-d031-46b1-b6c1-3ac429094dfb";
+    { device = "/dev/disk/by-uuid/dc91bbff-5a00-49d7-8202-4ef98a9935ec";
       fsType = "xfs";
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/2a591fca-e52c-47e6-a26a-fe0db5fdbe2c";
+    { device = "/dev/disk/by-uuid/76f7a708-432d-420a-9469-9947f5b5fad7";
       fsType = "xfs";
     };
 
   fileSystems."/opt" =
-    { device = "/dev/disk/by-uuid/426df476-da03-4c9a-bd71-c035d546401b";
+    { device = "/dev/disk/by-uuid/88556b81-f146-4e94-ae52-8a9a2a4b33c5";
       fsType = "ext4";
     };
 
   fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/2e269ac1-b9b7-4736-967e-fcf8d3047be8";
+    { device = "/dev/disk/by-uuid/04b63ddf-087b-451a-bf19-1bc370880aec";
       fsType = "ext4";
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/bcd8c31a-64b3-4690-a6bc-0c4a12ec4577";
+    { device = "/dev/disk/by-uuid/ad94ff88-c7aa-444c-9ee6-b43a3a0c1cbf";
       fsType = "ext4";
     };
 
