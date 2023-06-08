@@ -19,7 +19,7 @@ in
    package = pkgs.polybar;
    script = ''
       polybar -r xmonad/top 2>${config.xdg.configHome}/polybar/logs/xmonad-top.log & disown
-      polybar -r xmonad/bottom 2>${config.xdg.configHome}/polybar/logs/xmonad-bottom.log & disown     
+      polybar -r xmonad/bottom 2>${config.xdg.configHome}/polybar/logs/xmonad-bottom.log & disown
    '';
  };
 }

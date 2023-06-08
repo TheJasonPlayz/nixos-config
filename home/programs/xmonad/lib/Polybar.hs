@@ -1,11 +1,12 @@
 module Polybar where
 
-import qualified Codec.Binary.UTF8.String as UTF8
-import qualified DBus as D
-import qualified DBus.Client as D
 import XMonad
+import PolybarThemes.Hack as Hack
+import qualified Codec.Binary.UTF8.String as UTF8
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
+import qualified DBus as D
+import qualified DBus.Client as D
 
 mkDbusClient :: IO D.Client
 mkDbusClient = do
@@ -28,18 +29,13 @@ polybarHook :: D.Client -> PP
 polybarHook dbus =
   let wrapper c s | s /= "NSP" = wrap ("%{F" <> c <> "} ") " %{F-}" s
                   | otherwise  = mempty
-      blue   = "#2E9AFE"
-      gray   = "#7F7F7F"
-      orange = "#ea4300"
-      teal = "#38A3A5"
-      red    = "#722222"
   in  def { ppOutput          = dbusOutput dbus
-          , ppCurrent         = wrapper blue
-          , ppVisible         = wrapper gray
-          , ppUrgent          = wrapper orange
-          , ppHidden          = wrapper gray
-          , ppHiddenNoWindows = wrapper red
-          , ppTitle           = wrapper teal . shorten 90
+          , ppCurrent         = wrapper Hack.green
+          , ppVisible         = wrapper Hack.foreground
+          , ppUrgent          = wrapper Hack.yellow
+          , ppHidden          = wrapper Hack.red
+          , ppHiddenNoWindows = wrapper Hack.red
+          , ppTitle           = wrapper Hack.foreground . shorten 90
           }
 
 myPolybarLogHook dbus = myLogHook <+> dynamicLogWithPP (polybarHook dbus)

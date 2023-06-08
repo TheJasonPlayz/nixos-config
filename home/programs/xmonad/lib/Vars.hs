@@ -23,23 +23,19 @@ projects :: [Project]
 projects = [
     Project { projectName = "scratch"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "kitty"
+            , projectStartHook = Nothing
     }, Project { projectName = "web"
             , projectDirectory = "~/Downloads/"
-            , projectStartHook = Just $ do spawn "brave-bin"
+            , projectStartHook = Nothing
     }, Project { projectName = "gaming"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "steam"
-                                           spawn "lutris"
-                                           spawn "heroic"
+            , projectStartHook = Nothing
     }, Project { projectName = "social"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "slack"
-                                           spawn "discord-screenaudio"
+            , projectStartHook = Nothing
     }, Project { projectName = "dev"
-            , projectDirectory = "~/Git/"
-            , projectStartHook = Just $ do spawn "qgit"
-                                           spawn "code"
+            , projectDirectory = "~/Documents/git"
+            , projectStartHook = Nothing
     }
     ]
 

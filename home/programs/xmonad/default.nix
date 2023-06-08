@@ -18,6 +18,7 @@
        "Colors.hs" = "${libDir}/Colors.hs";
        "Vars.hs" = "${libDir}/Vars.hs";
        "Polybar.hs" = "${libDir}/Polybar.hs";
+       "PolybarThemes/Hack.hs" = "${libDir}/PolybarThemes/Hack.hs";
      };
  };
 }

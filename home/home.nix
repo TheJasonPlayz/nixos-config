@@ -22,9 +22,9 @@ in
       enable = true;
       initExtra = ''
          nitrogen --restore &
+         wireplumber &
       ''; 
     };
-    services.picom.enable = true;
   
     xdg = {
       enable = true;
